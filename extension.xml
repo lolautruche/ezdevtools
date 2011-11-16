@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<software>
+	<metadata>
+		<name>eZ Developer Tools</name>
+		<version>0.1</version>
+		<copyright>Copyright © 2011 Jérôme Vieilledent</copyright>
+		<license>GNU General Public License v3.0</license>
+		<info_url>http://projects.ez.no/ezdevtools</info_url>
+	</metadata>
+</software>
