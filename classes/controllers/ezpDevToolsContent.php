@@ -48,13 +48,9 @@ class ezpDevToolsContent extends ezpRestMvcController
                         'isContainer' => (bool)$class->attribute( 'is_container' ),
                         'alwaysAvailable' => (bool)$class->attribute( 'always_available' ),
                         'contentObjectName' => $class->attribute( 'contentobject_name' ),
-                        'remoteId' => $class->attribute( 'remote_id' )
+                        'remoteId' => $class->attribute( 'remote_id' ),
+                        'fields' => $this->getFieldsForClass( $class )
                     );
-
-                    if ( $this->hasResponseGroup( self::VIEWLIST_RESPONSEGROUP_FIELDS ) )
-                    {
-                        $classItem['fields'] = $this->getFieldsForClass( $class );
-                    }
 
                     $finalClassGroups[$groupName][] = $classItem;
                 }
