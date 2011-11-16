@@ -19,6 +19,19 @@ class ezpDevToolsContent extends ezpRestMvcController
     const VIEWLIST_RESPONSEGROUP_FIELDS = 'Fields';
 
     /**
+     * Model for this controller
+     *
+     * @var ezpDevToolsContentModel
+     */
+    private $model;
+
+    public function __construct( $action, ezcMvcRequest $request )
+    {
+        parent::__construct( $action, $request );
+        $this->model = new ezpDevToolsContentModel;
+    }
+
+    /**
      * Returns a list of content classes, grouped by class group
      *
      * @return ezpRestMvcResult
@@ -57,7 +70,7 @@ class ezpDevToolsContent extends ezpRestMvcController
             }
         }
 
-        $result->variables['contentClasses'] = $finalClassGroups;
+        $result->variables['contentClasses'] = $this->model->getContentClassesList();
         return $result;
     }
 
