@@ -13,12 +13,6 @@
 class ezpDevToolsContent extends ezpRestMvcController
 {
     /**
-     * Expected Response groups for content class list viewing
-     * @var string
-     */
-    const VIEWLIST_RESPONSEGROUP_FIELDS = 'Fields';
-
-    /**
      * Model for this controller
      *
      * @var ezpDevToolsContentModel
