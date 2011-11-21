@@ -51,4 +51,16 @@ class ezpDevToolsTemplate extends ezpRestMvcController
         $result->variables['params'] = $this->model->getOperatorParams( $this->operatorName );
         return $result;
     }
+
+    /**
+     * Returns the list of all template functions
+     *
+     * @return ezpRestMvcResult
+     */
+    public function doListFunctions()
+    {
+        $result = new ezpRestMvcResult;
+        $result->variables['functions'] = $this->model->getFunctionList();
+        return $result;
+    }
 }

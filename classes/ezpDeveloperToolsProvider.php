@@ -23,6 +23,10 @@ class ezpDevToolsProvider implements ezpRestProviderInterface, ezpRestViewContro
             'ezpDevToolsOperatorParams' => new ezpRestVersionedRoute(
                 new ezpMvcRailsRoute( '/template/operator/:operatorName/params', 'ezpDevToolsTemplate', 'getOperatorParams' ),
                 1
+            ),
+            'ezpDevToolsFunctions' => new ezpRestVersionedRoute(
+                new ezpMvcRailsRoute( '/template/function/list', 'ezpDevToolsTemplate', 'listFunctions' ),
+                1
             )
         );
 
