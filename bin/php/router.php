@@ -81,8 +81,9 @@ if ( $script && file_exists( $script ) )
         $_SERVER['SERVER_NAME'] = $_SERVER['HTTP_HOST'];
         $_SERVER['SERVER_PORT'] = '80';
     }
-    $_SERVER['SERVER_ADDR'] = $_SERVER['REMOTE_ADDR'];
 
+    if ( !isset( $_SERVER['SERVER_ADDR'] ) )
+        $_SERVER['SERVER_ADDR'] = gethostbyname( $_SERVER['SERVER_NAME'] );
     if ( !isset( $_SERVER['QUERY_STRING'] ) )
         $_SERVER['QUERY_STRING'] = '';
     if ( !isset( $_SERVER['SCRIPT_FILENAME'] ) )
