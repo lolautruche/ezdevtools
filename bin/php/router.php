@@ -4,12 +4,33 @@
  * WARNING !!! Use it for DEVELOPMENT purpose ONLY !!!
  * This script is provided as is, use it at your own risk !
  *
- * @copyright Copyright (C) 2011 Jérôme Vieilledent. All rights reserved.
+ * @copyright Copyright (C) 2011 J√©r√¥me Vieilledent. All rights reserved.
  * @license http://www.gnu.org/licenses/gpl-2.0.txt GNU General Public License v2
  * @version //autogentag//
- *
- *
  */
+
+if ( !isset( $_SERVER['SERVER_PROTOCOL'] ) )
+{
+    $message = <<<EOF
+This is a router script to be used with built-in PHP server (available as of PHP 5.4.0).
+It will set up all needed rewrite rules for eZ Publish.
+
+Usage
+-----
+From your command line, type :
+
+    $ cd /path/to/ezpublish/root
+    $ php -S localhost:8000 extension/ezdevtools/bin/php/router.php
+
+This will start PHP webserver for localhost on port 8000.
+You can of course replace localhost by another host. Port is also customizable.
+
+For more information on PHP webserver, see http://php.net/manual/en/features.commandline.webserver.php
+
+EOF;
+    echo $message;
+    exit;
+}
 
 // Determine which script to redirect to depending on rewrite rule to apply
 // If the request needs to be served directly, $script will be null
