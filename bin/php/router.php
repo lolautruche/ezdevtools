@@ -72,16 +72,6 @@ else if (
 if ( $script && file_exists( $script ) )
 {
     // First setup some missing $_SERVER vars
-    if ( strpos( $_SERVER['HTTP_HOST'], ':' ) )
-    {
-        list( $_SERVER['SERVER_NAME'], $_SERVER['SERVER_PORT'] ) = explode( ':', $_SERVER['HTTP_HOST'], 2 );
-    }
-    else
-    {
-        $_SERVER['SERVER_NAME'] = $_SERVER['HTTP_HOST'];
-        $_SERVER['SERVER_PORT'] = '80';
-    }
-
     if ( !isset( $_SERVER['SERVER_ADDR'] ) )
         $_SERVER['SERVER_ADDR'] = gethostbyname( $_SERVER['SERVER_NAME'] );
     if ( !isset( $_SERVER['QUERY_STRING'] ) )
