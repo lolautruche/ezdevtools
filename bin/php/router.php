@@ -78,6 +78,8 @@ if ( $script && file_exists( $script ) )
         $_SERVER['QUERY_STRING'] = '';
     if ( !isset( $_SERVER['SCRIPT_FILENAME'] ) )
         $_SERVER['SCRIPT_FILENAME'] = realpath( $script );
+    if ( !isset( $_SERVER['CONTENT_LENGTH'] ) )
+        $_SERVER['CONTENT_LENGTH'] = '';
 
     // Fix PHP_SELF since we deal with virtual folders, so PHP server would prepend /index.php to it
     if ( strpos( $uri, $script ) === false && strpos( $phpSelf, $script ) !== false )
